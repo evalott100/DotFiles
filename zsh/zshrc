@@ -1,0 +1,21 @@
+# ==== oh-my-zsh options
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="funky"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+export VIRTUAL_ENV_DISABLE_PROMPT=1 # added to PS2 manually
+
+
+# ==== useful variables and aliases
+alias vim="nvim" # Lazyvim is preeeeetty cool
+
+export HOME_SERVER_IP="root@192.168.0.51"
+export RETROPI_IP="pi@192.168.0.52"
+
+alias mntretropi="sshfs $RETROPI_IP:/home/pi/ /mnt/retropi"
+alias mntserver="sshfs $HOME_SERVER_IP:/mnt/storage /mnt/server-storage"
+
+
+# ==== system variables
+export EDITOR="nvim"
+export ARCHFLAGS="-arch x86_64"

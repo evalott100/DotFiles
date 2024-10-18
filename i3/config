@@ -134,7 +134,7 @@ bindsym $mod+Print exec xfce4-screenshooter
 
 
 #### APPEARANCE
-font pango:monospace bold 10
+font pango:0xProto Nerd Font bold 10
 
 bar {
         #output primary
@@ -183,6 +183,5 @@ exec --no-startup-id xsetroot -solid "#2E3440"
 exec --no-startup-id nm-applet
 
 # audio
-exec --no-startup-id pulseaudio
 exec --no-startup-id volumeicon
 
