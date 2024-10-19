@@ -1,12 +1,13 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-#### CONTROLS
+# ==== CONTROLS
 
 set $mod Mod4
 
 floating_modifier $mod
 
-bindsym $mod+space exec --no-startup-id dmenu_recency
+bindsym $mod+space exec --no-startup-id dmenu_recency \
+-h  27 -fn '0xProto Nerd Font-12' -nb '#2E3440' -nf '#D8DEE9' -sb '#B48EAD' -sf '#2E3440'
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -35,6 +36,7 @@ bindsym $mod+Shift+Tab focus mode_toggle
 bindsym $mod+a focus parent
 bindsym $mod+q kill
 
+
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
@@ -44,7 +46,7 @@ bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+0 workspace "10:0"
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -56,7 +58,7 @@ bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+0 move container to workspace "10:0"
 
 workspace "1" output DP-2
 workspace "2" output DP-2
@@ -67,7 +69,7 @@ workspace "6" output DP-2
 workspace "7" output eDP-1
 workspace "8" output eDP-1
 workspace "9" output eDP-1
-workspace "10" output eDP-1
+workspace "10:0" output eDP-1
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -107,13 +109,10 @@ mode "R" {
 
 bindsym $mod+r mode "R"
 
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+set $mode_system (l)ock, (s)uspend, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
     bindsym r exec --no-startup-id i3exit reboot, mode "default"
     bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
@@ -125,22 +124,22 @@ bindsym $mod+Shift+q mode "$mode_system"
 
 
 
-#### PROGRAM HOTKEYS
+# ==== PROGRAM HOTKEYS
 bindsym $mod+Return exec gnome-terminal
 bindsym $mod+t exec gnome-terminal
 bindsym $mod+y exec firefox
 bindsym $mod+u exec thunar
-bindsym $mod+Print exec xfce4-screenshooter
 
 
-#### APPEARANCE
+# ==== APPEARANCE
 font pango:0xProto Nerd Font bold 10
 
 bar {
         #output primary
         position top
         status_command i3blocks
-        font pango:monospace bold 11
+        font pango:0xProto Nerd Font bold 12
+        strip_workspace_numbers yes
 
 	colors {
                 background #2E3440
@@ -154,9 +153,8 @@ bar {
                 binding_mode       #88C0D0 #88C0D0 #2E3440
         }
 
-        padding 0px 0px 0 0px
+        padding 1px 1px 1 1px
 }
-
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #B48EAD #B48EAD #2E3440 #B48EAD   #B48EAD
@@ -170,7 +168,7 @@ smart_borders on
 default_border normal 3
 title_align center
 
-#### AUTOSTART PROGRAMS
+# ==== AUTOSTART PROGRAMS
 
 # settings-daemon
 exec --no-startup-id xfsettingsd

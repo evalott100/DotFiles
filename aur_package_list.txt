@@ -1,0 +1,9 @@
+dunst
+i3blocks
+pavucontrol
+xfce4-settings
+xfce4-power-manager
+dmenu-manjaro
+xfce4-screenshooter
+ttf-0xproto-nerd
+brightnessctl

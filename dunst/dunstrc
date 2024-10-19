@@ -1,0 +1,54 @@
+[global]
+    origin = bottom-right
+    frame_width = 5
+    frame_color = "#B48EAD"
+    font = 0xProto Nerd Font
+    markup = yes
+    format = "%s %p\n%b"
+    sort = yes
+    indicate_hidden = yes
+    alignment = center
+    bounce_freq = 5
+    show_age_threshold = 60
+    word_wrap = yes
+    ignore_newline = no
+    shrink = yes
+#   transparency = 15
+    idle_threshold = 120 
+    monitor = 0
+    follow = mouse
+    sticky_history = yes
+    history_length = 20
+    show_indicators = yes
+    line_height = 0
+    separator_height = 5
+    padding = 10
+    gap_size = 0
+    horizontal_padding = 10
+    separator_color = "#B48EAD"
+    startup_notification = false
+    dmenu = /usr/bin/dmenu -p dunst:
+    browser = firefox
+    icon_position = left
+    icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
+    max_icon_size=128
+
+[urgency_low]
+background = "#2E3440"
+foreground = "#d8dee9"
+highlight="#88C0D0"
+timeout = 10
+
+[urgency_normal]
+background = "#2E3440"
+foreground = "#d8dee9"
+highlight="#88C0D0"
+timeout = 10
+
+[urgency_critical]
+background = "#2E3440"
+foreground = "#d8dee9"
+frame_color = "#bf616a"
+highlight="#88C0D0"
+timeout = 0
+
