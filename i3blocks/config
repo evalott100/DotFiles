@@ -15,6 +15,12 @@ command=xtitle
 interval=1
 color=#D8DEE9
 
+[server-mount_check]
+command=sh -c 'if mount -l | grep -q "/mnt/home-server-drives"; then echo "home-server-mnt"; else echo ""; fi'
+interval=10
+color=#B48EAD
+
+
 [date]
 command=date '+%a %d/%m' | tr '[:lower:]' '[:upper:]'
 interval=1
@@ -24,3 +30,4 @@ color=#88C0D0
 command=date '+%H:%M:%S '
 interval=1
 color=#88C0D0
+
